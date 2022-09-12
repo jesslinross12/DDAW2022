@@ -9,30 +9,22 @@
     </head> 
     <body>
         <div class = "container">
-            <h1>Formulario Consola</h1>
-            <form method="POST" action ="/consola/altaConsola">
-                <div class="form-control">
-                    <label class = "form-label" for ="">Nombre de la consola</label>
-                    <input type="text" class="form-control" placeholder="Ingrese datos" id="nombreConsola" name="nombreConsola">
+            <div class="row">
+                <div class="col-12"><h1>ACTIVIDAD 2</h1></div>
+                <div class="col-12"><h2>FORMULARIO PALÍNDROMOS</h2>
+                    <form method="POST" action ="/formularioPalindromo">
+                        <div class="form-control">
+                            <label class = "form-label" for ="">Ingrese frase o palabra: </label>
+                            <input type="text" class="form-control" placeholder="Ingrese datos" id="entrada" name="entrada">
+                        </div>
+                        <div align="center" class="row">
+                            <p></p>
+                            <input  type="submit" class="btn btn-outline-warning btn-lg">
+                        </div>     
+                    </form>
                 </div>
-                <p></p>
-                <div class="form-control">
-                    <label class = "form-label" for ="">Empresa</label>
-                    <input type="text" class="form-control" placeholder="Ingrese datos" id="empresaConsola" name="empresaConsola">               
-                </div>
-                <p></p>
-                <div class="form-control">
-                    <label class = "form-label" for ="">Fecha de registro</label>
-                    <input type="text" class="form-control" placeholder="Ingrese datos" id="registroConsola" name="registroConsola">   
-                </div>
-                <p></p>
-                <div align="center" class="row">
-                    <input  type="reset" class="btn btn-outline-primary btn-lg">
-                    <p></p>
-                    <input  type="submit" class="btn btn-outline-warning btn-lg">
-                </div>
-                
-            </form>
+                <div class="col-12"><h2>FORMULARIO "F"</h2></div>
+            </div>
         </div>
     </body>
 </html>
