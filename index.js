@@ -6,9 +6,15 @@ const path = require('path'); //ruta donde se almacenan los archivos y permite h
 //const cores = require('cores'); //en este caso no se usa
 const app = express(); // método que genera una app de express 
 
+const consolaRoutes = require('./routes/consola');
+
 //middleware (pre-procesa peticiones y luego la manda osease interpreta)
-app.use(express.json())
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,'public')));
+
+//Middlewares con rutas separadas
+app.use('/consola',consolaRoutes);
 
 //Definición de la aplicación web
 app.get('/prueba', (request, response) => {
@@ -17,25 +23,24 @@ app.get('/prueba', (request, response) => {
     response.send('<h1>Hola Mundo<h1>'); 
 }); //se especifica (ruta, (arrow function se define request y response))
 
+//Ruta para Tarea1
 app.get('/aboutme', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'aboutme.html'));
 })
 
-
 //GET --> pedimos recursos directamente al servidor
 //Función para mandar un archivo directo
 // '/' --> especifica el route
-/*app.get('/', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 })
 
 app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'pagina.html'));
-})*/
-
+})
 
 //prueba query
-/*app.get('/query', (req, res) =>{
+app.get('/query', (req, res) =>{
     console.log(req.query)
     res.send("Datos enviados por query: "+ req.query.name)
 })
@@ -45,7 +50,7 @@ app.get('/params/:name/:age', (req, res) =>{
     console.log(req.params)
     console.log(req.query)
     res.send("Datos enviados por params: "+ req.params.name)
-})*/
+})
 
 //lanzar una nueva ruta
 app.post('/prueba3',(req,res)=> {
