@@ -14,21 +14,14 @@ p{
 h1{
     font-size: 2cm;
     font-family: Trebuchet MS;
-    background-color: rgb(195, 176, 206);
+    background-color: rgb(219, 203, 228);
     border-radius: 1.5cm;
-
+    text-align: center ;
 }
 
-h3{
+h2{
     font-size: 1cm;
     font-family: georgia;
     background-color: rgb(241, 219, 228);
-    border-style: groove;
-    border-radius: 1cm;
-}
-
-
-h2{
-    font-family: bondoni;
-    border-style: dashed;
+    text-align: justify;
 }

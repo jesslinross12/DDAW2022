@@ -6,24 +6,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/estilo1.css"> 
     </head> 
     <body>
         <div class = "container">
             <div class="row">
                 <div class="col-12"><h1>ACTIVIDAD 2</h1></div>
-                <div class="col-12"><h2>FORMULARIO PALÍNDROMOS</h2>
+                <div class="col-12 mb-4">
+                    <h2 class="mb-4">FORMULARIO PALÍNDROMOS</h2>
                     <form method="POST" action ="/formularioPalindromo">
                         <div class="form-control">
                             <label class = "form-label" for ="">Ingrese frase o palabra: </label>
-                            <input type="text" class="form-control" placeholder="Ingrese datos" id="entrada" name="entrada">
-                        </div>
-                        <div align="center" class="row">
-                            <p></p>
-                            <input  type="submit" class="btn btn-outline-warning btn-lg">
-                        </div>     
+                            <input type="text" class="form-control mb-3" placeholder="Ingrese datos" id="entrada" name="entrada">
+                            <button type="submit" class="btn btn-outline-secondary btn-lg">Validar</button>
+                        </div>  
                     </form>
                 </div>
-                <div class="col-12"><h2>FORMULARIO "F"</h2></div>
+                <div class="col-12 mb-4">
+                    <h2 class="mb-4">FORMULARIO F</h2>
+                    <form method="POST" action ="/formularioF">
+                        <div class="form-control">
+                            <label class = "form-label" for ="">Ingrese frase o palabra: </label>
+                            <input type="text" class="form-control mb-3" placeholder="Ingrese datos" id="entradaF" name="entradaF">
+                            <button type="submit" class="btn btn-outline-secondary btn-lg">Validar</button>
+                        </div>  
+                    </form>
+                </div>
             </div>
         </div>
     </body>
