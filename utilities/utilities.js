@@ -14,9 +14,9 @@ function validatePalin(str){
     }  
     return( 'La frase o palabra es palíndromo'); 
 
-   }
-
 };
+
+
 
 function validateF(str){
 
