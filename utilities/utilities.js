@@ -1,16 +1,18 @@
 //inserte funcion de paindromo
 function validatePalin(str){
 
-    var initStr = str.toLowerCase(); 
-    var revStr = initStr.split('').reverse().join('');
-
-   if (initStr==revStr){
-
-    return ("La palabra o frase ingresada es palíndromo");
-
-   }else{
-
-    return("La palabra o frase ingresada no es palíndromo");
+    // get the total length of the words  
+    const len = string.length;  
+  
+    // Use for loop to divide the words into 2 half  
+    for (let i = 0; i < len / 2; i++) {  
+  
+        // validate the first and last characters are same  
+        if (string[i] !== string[len - 1 - i]) {  
+            return( 'La frase o palabra no es palíndormo');  
+        }  
+    }  
+    return( 'La frase o palabra es palíndromo'); 
 
    }
 
