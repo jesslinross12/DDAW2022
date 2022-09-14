@@ -1,18 +1,15 @@
 //inserte funcion de paindromo
 function validatePalin(str){
 
-    // get the total length of the words  
-    const len = string.length;  
-  
-    // Use for loop to divide the words into 2 half  
-    for (let i = 0; i < len / 2; i++) {  
-  
-        // validate the first and last characters are same  
-        if (string[i] !== string[len - 1 - i]) {  
-            return( 'La frase o palabra no es palíndormo');  
-        }  
-    }  
-    return( 'La frase o palabra es palíndromo'); 
+    var re = /[\W_]/g;   //Idica los non-word characters: A word character is a character a-z, A-Z, 0-9, including _ (underscore).
+    var lowRegStr = str.toLowerCase().replace(re, '');  //Coloca la palabra en minúsculas y remplaza los carácteres no deseados por ''
+    var reverseStr = lowRegStr.split('').reverse().join('');
+
+    if(lowRegStr==reverseStr){
+        return("es palíndromo");
+    }else{
+        return("no es palíndromo")
+    }
 
 };
 
