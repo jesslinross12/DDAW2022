@@ -19,18 +19,29 @@ app.use(consolaRoutes);
 //GET --> pedimos recursos directamente al servidor
 //Función para mandar un archivo directo
 // '/' --> especifica el route
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'formulario.html'));
+app.get('/examen/pagina', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'info.html'));
 })
 
 //prueba query
-app.get('/query', (req, res) =>{
-    console.log(req.query)
-    res.send("Datos enviados por query: "+ req.query.name)
+app.post('/examen/validacion', (req, res) =>{
+    let arr = []
+    var suma = 0;
+    arr.push(req.body['A']);
+    arr.push(req.body['B']);
+    arr.push(req.body['C']);
+    console.log(req.body);
+    for(var i =0; i<arr.length; i++)
+        suma += arr[i];
+    
+    if (suma == 180)
+        res.json({triangulo:"positivo"});
+    else
+        res.json({triangulo:"negativo"});
 })
 
 //Lanzar la aplicación
-app.listen(8080, () => {
+app.listen(8083, () => {
     console.log('Servidor en línea');
 }); //recibe el puerto donde se va a ejecutar la app y un callback (arrow function)
 

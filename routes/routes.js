@@ -4,9 +4,6 @@ const formController = require('../controllers/controllers'); //importas control
 
 
 //Servicio para procesar los datos del formulario
-router.post('/formularioPalindromo', formController.postPalindromo);
-
-//Servicio para procesar los datos del formulario
-router.post('/formularioF', formController.postF);
+router.post('/validTriangle', formController.postTriangle);
 
 module.exports = router;

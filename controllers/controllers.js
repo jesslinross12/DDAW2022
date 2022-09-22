@@ -1,10 +1,19 @@
 const path = require("path");
-const {validatePalin, validateF} = require('../utilities/utilities.js')
 
-exports.postPalindromo = ( req, res) => {
-    res.send('<h2>'+validatePalin(req.body.entrada)+'</h2>');
-}
+exports.postTriangle = ( req, res) => {
+    let arr = []
+    var sum = 0;
+    arr.push(req.body['A']);
+    arr.push(req.body['B']);
+    arr.push(req.body['C']);
+    console.log(req.body); //los post van en el body
+    for(var i =0; i<arr.length; i++){
+        suma += arr[i];
+    }
 
-exports.postF = ( req, res) => {
-    res.send('<h2>'+validateF(req.body.entradaF)+'</h2>');
+    if (sum == 180){
+        res.json({trianguloRect:"positivo"});
+    }else{
+        res.json({trianguloRect:"negativo"});
+    }
 }
